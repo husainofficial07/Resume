@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sayyed Zainab Ali Akbar Shirazi - Resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .dark-mode-transition * {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+        }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 24px;
+            height: calc(100% - 24px);
+            width: 2px;
+            background-color: #e5e7eb;
+        }
+        .dark .timeline-item:not(:last-child)::after {
+            background-color: #4b5563;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 dark-mode-transition dark:bg-gray-900 dark:text-gray-200">
+    <!-- Loading Animation -->
+    <div id="loading" class="fixed inset-0 bg-white dark:bg-gray-900 flex items-center justify-center z-50">
+        <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500"></div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg hidden transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="bg-white dark:bg-gray-800 shadow-md sticky top-0 z-40 transition-all duration-300">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-xl font-bold text-blue-600 dark:text-blue-400">Zainab Shirazi</a>
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex space-x-6">
+                        <a href="#about" class="nav-link hover:text-blue-600 dark:hover:text-blue-400">About</a>
+                        <a href="#skills" class="nav-link hover:text-blue-600 dark:hover:text-blue-400">Skills</a>
+                        <a href="#experience" class="nav-link hover:text-blue-600 dark:hover:text-blue-400">Experience</a>
+                        <a href="#education" class="nav-link hover:text-blue-600 dark:hover:text-blue-400">Education</a>
+                        <a href="#contact" class="nav-link hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
+                    </div>
+                    <button id="themeToggle" class="p-2 rounded-full focus:outline-none">
+                        <i id="themeIcon" class="fas fa-moon text-gray-700 dark:text-yellow-300"></i>
+                    </button>
+                    <button id="mobileMenuButton" class="md:hidden p-2 rounded-full focus:outline-none">
+                        <i class="fas fa-bars text-gray-700 dark:text-gray-200"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="md:hidden hidden mt-4 pb-2">
+                <a href="#about" class="block py-2 nav-link hover:text-blue-600 dark:hover:text-blue-400">About</a>
+                <a href="#skills" class="block py-2 nav-link hover:text-blue-600 dark:hover:text-blue-400">Skills</a>
+                <a href="#experience" class="block py-2 nav-link hover:text-blue-600 dark:hover:text-blue-400">Experience</a>
+                <a href="#education" class="block py-2 nav-link hover:text-blue-600 dark:hover:text-blue-400">Education</a>
+                <a href="#contact" class="block py-2 nav-link hover:text-blue-600 dark:hover:text-blue-400">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="py-20 bg-gradient-to-r from-blue-500 to-purple-600 dark:from-blue-700 dark:to-purple-800 text-white">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/3 flex justify-center mb-10 md:mb-0">
+                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Zainab Shirazi" class="rounded-full w-48 h-48 object-cover border-4 border-white shadow-lg">
+            </div>
+            <div class="md:w-2/3 text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 fade-in">Sayyed Zainab Ali Akbar Shirazi</h1>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-6 fade-in">Customer Service Specialist</h2>
+                <p class="text-lg mb-8 max-w-2xl mx-auto md:mx-0 fade-in">Dedicated and results-driven professional with 3+ years of experience in providing exceptional customer service. Strong communication, problem-solving and conflict resolution skills.</p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 fade-in">
+                    <a href="#contact" class="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-full font-semibold shadow-md transition">Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Zainab Shirazi" class="rounded-lg w-64 h-64 object-cover shadow-lg">
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <p class="text-lg mb-6">Committed to delivering a positive customer experience while maintaining company standards and contributing to team success. Adept at handling high call volumes and working in fast-paced environments while maintaining accuracy and attention to detail.</p>
+                    <p class="text-lg mb-6">Known for being a proactive problem-solver with the ability to anticipate customer needs and provide personalized support. Dedicated to continuous improvement, with a passion for contributing to team goals and enhancing the overall customer experience.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <p class="font-semibold"><i class="fas fa-phone-alt mr-2 text-blue-500"></i> +91 8291734470</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold"><i class="fas fa-envelope mr-2 text-blue-500"></i> shirazizainab118@gmail.com</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold"><i class="fas fa-map-marker-alt mr-2 text-blue-500"></i> Mira Bhayandar, Mumbai</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold"><i class="fas fa-language mr-2 text-blue-500"></i> English, Hindi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-gray-100 dark:bg-gray-700">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Professional Skills</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Customer Service</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-gray-300 dark:bg-gray-600 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Communication</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-300 dark:bg-gray-600 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Problem Solving</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="w-full bg-gray-300 dark:bg-gray-600 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Teamwork</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-300 dark:bg-gray-600 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Technical Skills</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Microsoft Office</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="w-full bg-gray-300 dark:bg-gray-600 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>PowerPoint Design</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="w-full bg-gray-300 dark:bg-gray-600 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Background Verification</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="w-full bg-gray-300 dark:bg-gray-600 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Project Management</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="w-full bg-gray-300 dark:bg-gray-600 rounded-full h-2.5">
+                                <div class="bg-blue-600 h-2.5 rounded-full" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3 class="text-xl font-semibold mt-12 mb-6">Other Skills</h3>
+            <div class="flex flex-wrap gap-3">
+                <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full">Public Relations</span>
+                <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full">Time Management</span>
+                <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full">Leadership</span>
+                <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full">Conflict Resolution</span>
+                <span class="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full">Effective Communication</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Work Experience</h2>
+            <div class="relative">
+                <!-- Timeline -->
+                <div class="space-y-8">
+                    <!-- Experience 1 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-blue-600 border-4 border-blue-200 dark:border-blue-800"></div>
+                        <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold mb-2">Background Verification Specialist</h3>
+                            <h4 class="text-lg font-semibold text-blue-600 mb-2">Sterling Talent Solutions</h4>
+                            <p class="text-gray-600 dark:text-gray-300 mb-2">FEB 2024 - AUG 2024</p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>Conducted thorough checks to verify employment history, educational qualifications, criminal records and other relevant information for individuals applying for jobs.</li>
+                                <li>Proficient in using advanced tools and databases, ensuring compliance with legal regulations, and maintaining confidentiality throughout the verification process.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Experience 2 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-blue-600 border-4 border-blue-200 dark:border-blue-800"></div>
+                        <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold mb-2">PowerPoint Presentations Specialist / Customer Service Associate</h3>
+                            <h4 class="text-lg font-semibold text-blue-600 mb-2">Integreon Managed Solutions</h4>
+                            <p class="text-gray-600 dark:text-gray-300 mb-2">MAY 2021 - MARCH 2023</p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>First point of contact for our company, assisting customers with inquiries, product information and resolving any emerging problems.</li>
+                                <li>Worked with visuals, graphics, basic animations to different client templates.</li>
+                                <li>Understanding the depth and seriousness of the jobs and delivering on time was our priority.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Experience 3 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-blue-600 border-4 border-blue-200 dark:border-blue-800"></div>
+                        <div class="bg-gray-100 dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold mb-2">Customer Service Associate</h3>
+                            <h4 class="text-lg font-semibold text-blue-600 mb-2">Teleperformance Business Services</h4>
+                            <p class="text-gray-600 dark:text-gray-300 mb-2">JAN 2020 - MARCH 2021</p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>Demonstrated ability to build rapport with customers, ensuring satisfaction, loyalty, and retention.</li>
+                                <li>Adept at handling high call volumes and working in fast-paced environments while maintaining accuracy and attention to detail.</li>
+                                <li>Proactive problem-solver with the ability to anticipate customer needs and provide personalized support.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-16 bg-gray-100 dark:bg-gray-700">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Education</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Education 1 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-2">Bachelor's of Arts</h3>
+                    <h4 class="text-lg font-semibold text-blue-600 mb-2">SNDT Women's University</h4>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">2019</p>
+                </div>
+                
+                <!-- Education 2 -->
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-2">Higher Secondary Certificate (HSC)</h3>
+                    <h4 class="text-lg font-semibold text-blue-600 mb-2">Abhinav Vidya Mandir</h4>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">2016</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="md:w-1/2">
+                    <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Location</h4>
+                                <p class="text-gray-600 dark:text-gray-300">Mira Bhayandar, Mumbai, India</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Email</h4>
+                                <p class="text-gray-600 dark:text-gray-300">shirazizainab118@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 dark:bg-blue-900 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Phone</h4>
+                                <p class="text-gray-600 dark:text-gray-300">+91 8291734470</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold mt-8 mb-4">Follow Me</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-blue-100 dark:bg-blue-900 hover:bg-blue-200 dark:hover:bg-blue-800 text-blue-600 dark:text-blue-400 p-3 rounded-full transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="bg-blue-100 dark:bg-blue-900 hover:bg-blue-200 dark:hover:bg-blue-800 text-blue-600 dark:text-blue-400 p-3 rounded-full transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="bg-blue-100 dark:bg-blue-900 hover:bg-blue-200 dark:hover:bg-blue-800 text-blue-600 dark:text-blue-400 p-3 rounded-full transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form id="contactForm" class="space-y-4">
+                        <div>
+                            <label for="name" class="block mb-2 font-medium">Your Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 font-medium">Your Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700" required>
+                        </div>
+                        <div>
+                            <label for="subject" class="block mb-2 font-medium">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-2 font-medium">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white dark:bg-gray-700" required></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Sayyed Zainab Ali Akbar Shirazi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Wait for the DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide loading animation after 1.5 seconds
+            setTimeout(function() {
+                document.getElementById('loading').style.display = 'none';
+            }, 1500);
+            
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobileMenuButton');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu when a link is clicked
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+            
+            // Theme toggle functionality - FIXED VERSION
+            const themeToggle = document.getElementById('themeToggle');
+            const themeIcon = document.getElementById('themeIcon');
+            const html = document.documentElement;
+            
+            // Check for saved theme preference or use preferred color scheme
+            const savedTheme = localStorage.getItem('theme') || 
+                              (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            
+            // Apply the saved theme
+            if (savedTheme === 'dark') {
+                html.classList.add('dark');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                html.classList.remove('dark');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+            
+            // Toggle theme
+            themeToggle.addEventListener('click', function() {
+                html.classList.toggle('dark');
+                
+                if (html.classList.contains('dark')) {
+                    themeIcon.classList.replace('fa-moon', 'fa-sun');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    themeIcon.classList.replace('fa-sun', 'fa-moon');
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Back to top button
+            const backToTopButton = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.remove('hidden');
+                } else {
+                    backToTopButton.classList.add('hidden');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Navbar shadow on scroll
+            const navbar = document.getElementById('navbar');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 10) {
+                    navbar.classList.add('shadow-lg');
+                } else {
+                    navbar.classList.remove('shadow-lg');
+                }
+            });
+            
+            // Form submission
+            const contactForm = document.getElementById('contactForm');
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                
+                // Here you would typically send the form data to a server
+                // For this example, we'll just show an alert
+                alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon.`);
+                
+                // Reset the form
+                contactForm.reset();
+            });
+
+            // Add fade-in class to elements when they come into view
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100');
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            fadeElements.forEach(element => {
+                element.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+                fadeInObserver.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
